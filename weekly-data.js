@@ -2,11 +2,11 @@
 // Just change the match details below - nothing else!
 
 const weeklyPicks = {
-    weekTitle: "January 20-21, 2024",
+    weekTitle: "October 25-26, 2025",
     
     accumulator1: {
-        totalOdds: 4.50,
-        recommendedStake: 1,
+        totalOdds: ,
+        recommendedStake: 5000,
         matches: [
             {
                 homeTeam: "Man City",
@@ -69,4 +69,5 @@ const previousResults = {
         { week: "Dec 9-10", acc1: "W", acc2: "W" }
     ]
     // ADD NEW MONTHS HERE AS YOU GO
+
 };
