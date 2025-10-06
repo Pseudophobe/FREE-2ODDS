@@ -1,0 +1,307 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Green Theme Colors */
+:root {
+    --primary-green: #22c55e;
+    --dark-green: #16a34a;
+    --light-green: #dcfce7;
+    --accent-green: #15803d;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Disclaimer */
+.disclaimer {
+    background-color: #fef3c7;
+    border-left: 4px solid #d97706;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.disclaimer p {
+    text-align: center;
+}
+
+/* Current Picks Section */
+.current-picks {
+    padding: 3rem 0;
+    background-color: white;
+}
+
+.current-picks h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--dark-green);
+    font-size: 2rem;
+}
+
+/* Pick Cards */
+.pick-card {
+    background: white;
+    border: 2px solid var(--light-green);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pick-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-green);
+}
+
+.match-info h3 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.team {
+    padding: 0.5rem 1rem;
+    background-color: var(--light-green);
+    border-radius: 5px;
+}
+
+.vs {
+    color: #666;
+}
+
+.bet-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.bet-type {
+    font-weight: bold;
+    color: var(--accent-green);
+}
+
+.odds {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    background-color: var(--light-green);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.analysis h4 {
+    color: var(--dark-green);
+    margin-bottom: 0.5rem;
+}
+
+.stake {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: var(--light-green);
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--accent-green);
+}
+
+/* Performance Section */
+.performance {
+    padding: 3rem 0;
+    background-color: var(--light-green);
+}
+
+.performance h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--dark-green);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    margin: 1rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-green);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.help-links {
+    margin-top: 1rem;
+}
+
+.help-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.help-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .teams {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .bet-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+/* Previous Results Styling */
+.results-tracker {
+    margin-top: 2rem;
+}
+
+.month-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.month-section h3 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--light-green);
+    padding-bottom: 0.5rem;
+}
+
+.weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.week-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+}
+
+.week-date {
+    font-weight: bold;
+    color: #333;
+}
+
+.acc-results {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.result-box {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.result-box.win {
+    background-color: #22c55e; /* Green */
+}
+
+.result-box.loss {
+    background-color: #ef4444; /* Red */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .week-result {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .weeks-grid {
+        grid-template-columns: 1fr;
+    }
+}
