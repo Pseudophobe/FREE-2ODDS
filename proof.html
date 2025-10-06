@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Record - FREE 2ODDS TIP</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .proof-header {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+
+        .stat-card-large {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #22c55e;
+        }
+
+        .stat-value-large {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #22c55e;
+            margin: 0.5rem 0;
+        }
+
+        .archive-section {
+            margin-bottom: 3rem;
+        }
+
+        .month-header {
+            background: #16a34a;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
+        }
+
+        .week-result-detailed {
+            background: white;
+            border: 2px solid #dcfce7;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .week-header {
+            background: #f8f9fa;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .week-stats {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .acc-result {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .win { background: #22c55e; }
+        .loss { background: #ef4444; }
+
+        .matches-details {
+            padding: 1rem;
+        }
+
+        .match-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #22c55e;
+        }
+
+        .match-info {
+            flex: 1;
+        }
+
+        .match-outcome {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .result-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .correct { background: #22c55e; }
+        .incorrect { background: #ef4444; }
+
+        .navigation {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 1rem;
+        }
+
+        .nav-button:hover {
+            background: #15803d;
+        }
+
+        .performance-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .week-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .match-detail {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .match-outcome {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>⚽ FREE 2ODDS TIP RESULTS</h1>
+            <p>Complete Track Record & Proof</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <a href="index.html" class="nav-button">🏠 Current Picks</a>
+        <a href="proof.html" class="nav-button" style="background: #15803d;">📊 Track Record</a>
+    </div>
+
+    <!-- Stats Overview -->
+    <section class="stats-overview">
+        <div class="stat-card-large">
+            <h3>Total Weeks</h3>
+            <div class="stat-value-large" id="total-weeks">0</div>
+            <p>Weeks Tracked</p>
+        </div>
+        <div class="stat-card-large">
+            <h3>Success Rate</h3>
+            <div class="stat-value-large" id="success-rate">0%</div>
+            <p>Overall Performance</p>
+        </div>
+        <div class="stat-card-large">
+            <h3>Total Picks</h3>
+            <div class="stat-value-large" id="total-picks">0</div>
+            <p>Accumulators Analyzed</p>
+        </div>
+        <div class="stat-card-large">
+            <h3>Avg Odds</h3>
+            <div class="stat-value-large" id="avg-odds">0.00</div>
+            <p>Average Per Accumulator</p>
+        </div>
+    </section>
+
+    <!-- Proof Archive -->
+    <section class="current-picks">
+        <div class="container">
+            <h2>Complete Historical Record</h2>
+            <div id="proof-archive">
+                <!-- PROOF DATA WILL AUTO-LOAD HERE -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Weekend Football Bets. Transparent track record.</p>
+            <div class="help-links">
+                <a href="index.html">Current Picks</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Scripts -->
+    <script src="weekly-data.js"></script>
+    <script>
+        // Load proof data
+        function loadProofData() {
+            const archiveContainer = document.getElementById('proof-archive');
+            
+            if (!window.bettingArchive || bettingArchive.length === 0) {
+                archiveContainer.innerHTML = '<p style="text-align: center; padding: 2rem;">No historical data available yet. Check back after first week!</p>';
+                return;
+            }
+
+            let archiveHTML = '';
+            let totalWeeks = bettingArchive.length;
+            let totalAccumulators = 0;
+            let winningAccumulators = 0;
+            let totalOdds = 0;
+
+            // Group by month
+            const months = {};
+            bettingArchive.forEach(week => {
+                const month = week.date.substring(0, 7); // YYYY-MM
+                if (!months[month]) months[month] = [];
+                months[month].push(week);
+            });
+
+            // Display by month
+            for (const [month, weeks] of Object.entries(months)) {
+                const monthName = new Date(month + '-01').toLocaleDateString('en', { month: 'long', year: 'numeric' });
+                
+                archiveHTML += `
+                    <div class="archive-section">
+                        <h3 class="month-header">${monthName}</h3>
+                `;
+
+                weeks.forEach(week => {
+                    totalAccumulators += week.accumulators.length;
+                    const weekWins = week.accumulators.filter(acc => acc.result === 'W').length;
+                    winningAccumulators += weekWins;
+
+                    archiveHTML += `
+                        <div class="week-result-detailed">
+                            <div class="week-header">
+                                <div>
+                                    <h4>${week.week}</h4>
+                                    <small>${week.date}</small>
+                                </div>
+                                <div class="week-stats">
+                                    <span class="acc-result ${weekWins >= 1 ? 'win' : 'loss'}">Acc1: ${week.accumulators[0]?.result || 'N/A'}</span>
+                                    <span class="acc-result ${weekWins >= 2 ? 'win' : 'loss'}">Acc2: ${week.accumulators[1]?.result || 'N/A'}</span>
+                                    <span style="font-weight: bold; color: #16a34a;">${weekWins}/2 Wins</span>
+                                </div>
+                            </div>
+                            <div class="matches-details">
+                    `;
+
+                    week.accumulators.forEach((accumulator, accIndex) => {
+                        totalOdds += accumulator.matches.reduce((sum, match) => sum * match.odds, 1);
+                        
+                        archiveHTML += `
+                            <div style="margin-bottom: 1.5rem;">
+                                <h5>${accumulator.name} <span class="acc-result ${accumulator.result === 'W' ? 'win' : 'loss'}">${accumulator.result}</span></h5>
+                                <div class="performance-breakdown">
+                        `;
+
+                        accumulator.matches.forEach(match => {
+                            const isCorrect = match.actualResult === 'W';
+                            archiveHTML += `
+                                <div class="match-detail">
+                                    <div class="match-info">
+                                        <strong>${match.game}</strong><br>
+                                        <span style="color: #666;">${match.bet} @${match.odds}</span>
+                                    </div>
+                                    <div class="match-outcome">
+                                        <span class="result-indicator ${isCorrect ? 'correct' : 'incorrect'}">${isCorrect ? '✓' : '✗'}</span>
+                                        <span style="font-weight: bold; color: ${isCorrect ? '#22c55e' : '#ef4444'}">
+                                            ${isCorrect ? 'Correct' : 'Wrong'}
+                                        </span>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        archiveHTML += `
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    archiveHTML += `
+                            </div>
+                        </div>
+                    `;
+                });
+
+                archiveHTML += `</div>`;
+            }
+
+            archiveContainer.innerHTML = archiveHTML;
+
+            // Update statistics
+            document.getElementById('total-weeks').textContent = totalWeeks;
+            document.getElementById('success-rate').textContent = totalAccumulators > 0 
+                ? Math.round((winningAccumulators / totalAccumulators) * 100) + '%' 
+                : '0%';
+            document.getElementById('total-picks').textContent = totalAccumulators;
+            document.getElementById('avg-odds').textContent = totalAccumulators > 0 
+                ? (totalOdds / totalAccumulators).toFixed(2) 
+                : '0.00';
+        }
+
+        // Load when page opens
+        document.addEventListener('DOMContentLoaded', loadProofData);
+    </script>
+</body>
+</html>

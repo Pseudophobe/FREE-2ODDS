@@ -2,11 +2,11 @@
 // Just change the match details below - nothing else!
 
 const weeklyPicks = {
-    weekTitle: "October 25-26, 2025",
+    weekTitle: "October 25-26, 2024",
     
     accumulator1: {
-        totalOdds: ,
-        recommendedStake: 5000,
+        totalOdds: 4.50,
+        recommendedStake: 1,
         matches: [
             {
                 homeTeam: "Man City",
@@ -58,16 +58,40 @@ const weeklyPicks = {
 // ADD THIS TO YOUR EXISTING weekly-data.js FILE - PASTE AT THE BOTTOM
 
 const previousResults = {
-    january2024: [
-        { week: "Jan 13-14", acc1: "W", acc2: "W" },
-        { week: "Jan 6-7", acc1: "W", acc2: "W" },
-        { week: "Dec 30-31", acc1: "W", acc2: "W" }
+    October2025: [
+        { week: " Week 3", acc1: "W", acc2: "W" },
+        { week: " Week 4", acc1: "W", acc2: "W" },
+        { week: " Week 5", acc1: "W", acc2: "W" }
     ],
-    december2023: [
-        { week: "Dec 23-24", acc1: "W", acc2: "W" },
-        { week: "Dec 16-17", acc1: "W", acc2: "W" },
-        { week: "Dec 9-10", acc1: "W", acc2: "W" }
-    ]
     // ADD NEW MONTHS HERE AS YOU GO
-
 };
+
+// ADD THIS TO YOUR weekly-data.js - PASTE AT THE BOTTOM
+
+// Historical Proof Archive - This will grow automatically each week
+const bettingArchive = [
+    // Example past week (you'll add real data as you go)
+    {
+        week: "October 25-26, 2025",
+        accumulators: [
+            {
+                name: "Accumulator #1",
+                result: "W",
+                matches: [
+                    { game: "Man City vs Chelsea", bet: "Home Win", odds: 1.80, actualResult: "W" },
+                    { game: "Arsenal vs Tottenham", bet: "Over 2.5 Goals", odds: 1.90, actualResult: "W" },
+                    { game: "Liverpool vs Brighton", bet: "BTTS: Yes", odds: 1.60, actualResult: "L" }
+                ]
+            },
+            {
+                name: "Accumulator #2",
+                result: "L", 
+                matches: [
+                    { game: "Barcelona vs Real Madrid", bet: "Over 1.5 Goals", odds: 1.40, actualResult: "W" },
+                    { game: "Bayern vs Dortmund", bet: "Home Win", odds: 1.70, actualResult: "L" }
+                ]
+            }
+        ]
+    }
+    // Add new weeks here as you complete them
+];

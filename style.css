@@ -69,85 +69,108 @@ header p {
     font-size: 2rem;
 }
 
-/* Pick Cards */
-.pick-card {
+/* Accumulator Cards */
+.accumulator-card {
     background: white;
     border: 2px solid var(--light-green);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.pick-card:hover {
+.accumulator-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-green);
 }
 
-.match-info h3 {
-    color: var(--dark-green);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.teams {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.team {
-    padding: 0.5rem 1rem;
-    background-color: var(--light-green);
-    border-radius: 5px;
-}
-
-.vs {
-    color: #666;
-}
-
-.bet-details {
+.acc-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-green);
 }
 
-.bet-type {
-    font-weight: bold;
-    color: var(--accent-green);
+.acc-header h3 {
+    color: var(--dark-green);
+    margin: 0;
 }
 
-.odds {
+.total-odds {
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--primary-green);
-    background-color: var(--light-green);
+}
+
+.total-odds span {
+    background-color: var(--primary-green);
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
 }
 
-.analysis h4 {
-    color: var(--dark-green);
-    margin-bottom: 0.5rem;
+/* Individual Matches in Accumulator */
+.matches {
+    margin-bottom: 1.5rem;
 }
 
-.stake {
-    margin-top: 1rem;
-    padding: 0.8rem;
-    background-color: var(--light-green);
-    border-radius: 5px;
+.match {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+}
+
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    text-align: center;
+}
+
+.bet-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection {
     color: var(--accent-green);
+    font-weight: bold;
+}
+
+.match-odds {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+/* Accumulator Footer */
+.acc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 2px solid var(--light-green);
+}
+
+.stake-recommendation {
+    color: var(--accent-green);
+    font-size: 1.1rem;
+}
+
+.potential-return span {
+    background-color: var(--dark-green);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 /* Performance Section */
@@ -184,49 +207,6 @@ header p {
     margin: 1rem 0;
 }
 
-/* Footer */
-footer {
-    background-color: var(--dark-green);
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.help-links {
-    margin-top: 1rem;
-}
-
-.help-links a {
-    color: white;
-    margin: 0 1rem;
-    text-decoration: none;
-}
-
-.help-links a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .teams {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .bet-details {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-    
-    .stats {
-        grid-template-columns: 1fr;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-}
 /* Previous Results Styling */
 .results-tracker {
     margin-top: 2rem;
@@ -283,6 +263,14 @@ footer {
     font-weight: bold;
     color: white;
     font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.result-box:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: white;
 }
 
 .result-box.win {
@@ -293,8 +281,70 @@ footer {
     background-color: #ef4444; /* Red */
 }
 
-/* Responsive */
+/* View Full Record Button */
+.view-full-record-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.view-full-record-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-green);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.help-links {
+    margin-top: 1rem;
+}
+
+.help-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.help-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .teams {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .bet-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
     .week-result {
         flex-direction: column;
         gap: 0.5rem;
@@ -303,5 +353,29 @@ footer {
     
     .weeks-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .acc-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .acc-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .match-teams {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .bet-selection {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
     }
 }

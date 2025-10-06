@@ -67,49 +67,72 @@ function createAccumulatorHTML(title, accumulator) {
     `;
 }
 
-// Auto-load when page opens
-document.addEventListener('DOMContentLoaded', loadWeeklyPicks);
-
-// ADD THIS TO YOUR EXISTING auto-loader.js FILE - PASTE AT THE BOTTOM
-
-function loadPreviousResults() {
+// NEW FUNCTION: Load results with clickable links
+function loadPreviousResultsWithLinks() {
     const archiveSection = document.querySelector('.archive .container');
     
     let resultsHTML = '<div class="results-tracker">';
     
-    // Loop through each month
-    for (const [month, weeks] of Object.entries(previousResults)) {
-        resultsHTML += `
-            <div class="month-section">
-                <h3>${month.charAt(0).toUpperCase() + month.slice(1)}</h3>
-                <div class="weeks-grid">
-        `;
-        
-        // Loop through each week in the month
-        weeks.forEach(weekResult => {
+    // Check if we have proof data
+    const hasProofData = window.bettingArchive && bettingArchive.length > 0;
+    
+    if (hasProofData) {
+        // Loop through each month
+        for (const [month, weeks] of Object.entries(previousResults)) {
             resultsHTML += `
-                <div class="week-result">
-                    <div class="week-date">${weekResult.week}</div>
-                    <div class="acc-results">
-                        <span class="result-box ${weekResult.acc1 === 'W' ? 'win' : 'loss'}">${weekResult.acc1}</span>
-                        <span class="result-box ${weekResult.acc2 === 'W' ? 'win' : 'loss'}">${weekResult.acc2}</span>
+                <div class="month-section">
+                    <h3>${month.charAt(0).toUpperCase() + month.slice(1)}</h3>
+                    <div class="weeks-grid">
+            `;
+            
+            // Loop through each week in the month
+            weeks.forEach(weekResult => {
+                resultsHTML += `
+                    <div class="week-result">
+                        <div class="week-date">${weekResult.week}</div>
+                        <div class="acc-results">
+                            <a href="proof.html#${weekResult.week.replace(/\s+/g, '-')}" 
+                               class="result-box ${weekResult.acc1 === 'W' ? 'win' : 'loss'}">
+                                ${weekResult.acc1}
+                            </a>
+                            <a href="proof.html#${weekResult.week.replace(/\s+/g, '-')}" 
+                               class="result-box ${weekResult.acc2 === 'W' ? 'win' : 'loss'}">
+                                ${weekResult.acc2}
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsHTML += `
                     </div>
                 </div>
             `;
-        });
-        
+        }
+    } else {
         resultsHTML += `
-                </div>
+            <div style="text-align: center; padding: 2rem;">
+                <p>No previous results yet. Check back after first weekend!</p>
             </div>
         `;
     }
     
     resultsHTML += '</div>';
+    
+    // Add the "View Full Record" button
+    resultsHTML += `
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="proof.html" class="view-full-record-btn">
+                📊 View Complete Track Record
+            </a>
+        </div>
+    `;
+    
     archiveSection.innerHTML = '<h2>Previous Weeks Results</h2>' + resultsHTML;
 }
 
 // Update the auto-load function to also load results
 document.addEventListener('DOMContentLoaded', function() {
     loadWeeklyPicks();
-    loadPreviousResults();
+    loadPreviousResultsWithLinks(); // CHANGED to use clickable version
 });
