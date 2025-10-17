@@ -221,7 +221,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2024 Weekend Football Bets. Transparent track record.</p>
+            <p>© 2025 FREE 2ODDS TIP. Transparent track record.</p>
             <div class="help-links">
                 <a href="index.html">Current Picks</a>
                 <a href="#">Contact</a>
@@ -277,9 +277,8 @@
                                     <small>${week.date}</small>
                                 </div>
                                 <div class="week-stats">
-                                    <span class="acc-result ${weekWins >= 1 ? 'win' : 'loss'}">Acc1: ${week.accumulators[0]?.result || 'N/A'}</span>
-                                    <span class="acc-result ${weekWins >= 2 ? 'win' : 'loss'}">Acc2: ${week.accumulators[1]?.result || 'N/A'}</span>
-                                    <span style="font-weight: bold; color: #16a34a;">${weekWins}/2 Wins</span>
+                                    <span class="acc-result ${weekWins >= 1 ? 'win' : 'loss'}">Result: ${week.accumulators[0]?.result || 'N/A'}</span>
+                                    <span style="font-weight: bold; color: #16a34a;">${weekWins}/1 Win</span>
                                 </div>
                             </div>
                             <div class="matches-details">
@@ -290,7 +289,7 @@
                         
                         archiveHTML += `
                             <div style="margin-bottom: 1.5rem;">
-                                <h5>${accumulator.name} <span class="acc-result ${accumulator.result === 'W' ? 'win' : 'loss'}">${accumulator.result}</span></h5>
+                                <h5>Weekly Accumulator <span class="acc-result ${accumulator.result === 'W' ? 'win' : 'loss'}">${accumulator.result}</span></h5>
                                 <div class="performance-breakdown">
                         `;
 
