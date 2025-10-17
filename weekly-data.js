@@ -2,96 +2,73 @@
 // Just change the match details below - nothing else!
 
 const weeklyPicks = {
-    weekTitle: "October 25-26, 2024",
+    weekTitle: "October 17-19, 2025",
     
-    accumulator1: {
-        totalOdds: 4.50,
-        recommendedStake: 1,
+    accumulator: {
+        totalOdds: 2.02,
+        recommendedStake: 10000,
         matches: [
             {
-                homeTeam: "Man City",
+                homeTeam: "Nottingham",
                 awayTeam: "Chelsea", 
-                betSelection: "Man City to Win",
-                odds: 1.80
+                betSelection: "Draw/away",
+                odds: 1.28
             },
             {
-                homeTeam: "Arsenal",
-                awayTeam: "Tottenham",
-                betSelection: "Over 2.5 Goals", 
-                odds: 1.90
+                homeTeam: "Fulham",
+                awayTeam: "Arsenal",
+                betSelection: "Away over 0.5",
+                odds: 1.16
             },
             {
-                homeTeam: "Liverpool",
-                awayTeam: "Brighton",
-                betSelection: "BTTS: Yes",
-                odds: 1.60
-            }
-        ]
-    },
-    
-    accumulator2: {
-        totalOdds: 3.20,
-        recommendedStake: 2,
-        matches: [
-            {
-                homeTeam: "Barcelona",
-                awayTeam: "Real Madrid",
-                betSelection: "Over 1.5 Goals",
-                odds: 1.40
-            },
-            {
-                homeTeam: "Bayern Munich",
-                awayTeam: "Dortmund", 
-                betSelection: "Bayern to Win",
-                odds: 1.70
+                homeTeam: "Getafe", 
+                awayTeam: "Madrid",
+                betSelection: "Away over 0.5",
+                odds: 1.13
             },
             {
                 homeTeam: "PSG",
-                awayTeam: "Marseille",
-                betSelection: "PSG -1.5",
-                odds: 2.10
+                awayTeam: "Strasbourg",
+                betSelection: "Home under 4.5", 
+                odds: 1.09
+            },
+            {
+                homeTeam: "Man City",
+                awayTeam: "Everton",
+                betSelection: "Home over 0.5",
+                odds: 1.10
             }
+            // Add or remove matches as needed
         ]
     }
 };
 
-// ADD THIS TO YOUR EXISTING weekly-data.js FILE - PASTE AT THE BOTTOM
-
-const previousResults = {
-    October2025: [
-        { week: " Week 3", acc1: "W", acc2: "W" },
-        { week: " Week 4", acc1: "W", acc2: "W" },
-        { week: " Week 5", acc1: "W", acc2: "W" }
-    ],
-    // ADD NEW MONTHS HERE AS YOU GO
-};
-
-// ADD THIS TO YOUR weekly-data.js - PASTE AT THE BOTTOM
-
-// Historical Proof Archive - This will grow automatically each week
+// Historical Proof Archive
 const bettingArchive = [
-    // Example past week (you'll add real data as you go)
+    // PAST WEEKS GO HERE
     {
-        week: "October 25-26, 2025",
+        week: "October 10-12, 2025",
+        date: "2025-10-10",
         accumulators: [
             {
-                name: "Accumulator #1",
+                name: "Weekly Accumulator",
                 result: "W",
                 matches: [
                     { game: "Man City vs Chelsea", bet: "Home Win", odds: 1.80, actualResult: "W" },
                     { game: "Arsenal vs Tottenham", bet: "Over 2.5 Goals", odds: 1.90, actualResult: "W" },
                     { game: "Liverpool vs Brighton", bet: "BTTS: Yes", odds: 1.60, actualResult: "L" }
                 ]
-            },
-            {
-                name: "Accumulator #2",
-                result: "L", 
-                matches: [
-                    { game: "Barcelona vs Real Madrid", bet: "Over 1.5 Goals", odds: 1.40, actualResult: "W" },
-                    { game: "Bayern vs Dortmund", bet: "Home Win", odds: 1.70, actualResult: "L" }
-                ]
             }
         ]
     }
     // Add new weeks here as you complete them
 ];
+
+// Simple results tracker
+const previousResults = {
+    October2025: [
+        { week: "Oct 10-12", result: "W" },
+        { week: "Oct 3-5", result: "W" },
+        { week: "Sep 26-28", result: "L" }
+    ]
+};
