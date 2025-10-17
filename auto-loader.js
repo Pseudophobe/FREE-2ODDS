@@ -56,7 +56,7 @@ function createAccumulatorHTML(title, accumulator) {
                     <strong>Recommended Stake:</strong> #${accumulator.recommendedStake.toLocaleString()}
                 </div>
                 <div class="potential-return">
-                    Potential Return: <span>#${(potentialReturn * 1000).toLocaleString()}</span>
+                    Potential Return: <span>#${parseFloat(potentialReturn).toLocaleString()}</span>
                 </div>
             </div>
         </div>
