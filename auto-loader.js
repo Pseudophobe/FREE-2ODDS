@@ -9,13 +9,9 @@ function loadWeeklyPicks() {
     // Update week title
     document.getElementById('week-title').textContent = weeklyPicks.weekTitle;
     
-    // Create Accumulator 1
-    const acc1HTML = createAccumulatorHTML('⚡ Accumulator #1', weeklyPicks.accumulator1);
-    container.innerHTML += acc1HTML;
-    
-    // Create Accumulator 2
-    const acc2HTML = createAccumulatorHTML('⚡ Accumulator #2', weeklyPicks.accumulator2);
-    container.innerHTML += acc2HTML;
+    // Create Single Accumulator
+    const accHTML = createAccumulatorHTML('⚡ Weekly Accumulator', weeklyPicks.accumulator);
+    container.innerHTML += accHTML;
 }
 
 function createAccumulatorHTML(title, accumulator) {
@@ -57,10 +53,10 @@ function createAccumulatorHTML(title, accumulator) {
             
             <div class="acc-footer">
                 <div class="stake-recommendation">
-                    <strong>Recommended Stake:</strong> ${accumulator.recommendedStake} unit${accumulator.recommendedStake > 1 ? 's' : ''}
+                    <strong>Recommended Stake:</strong> #${accumulator.recommendedStake.toLocaleString()}
                 </div>
                 <div class="potential-return">
-                    Potential Return: <span>${potentialReturn} units</span>
+                    Potential Return: <span>#${(potentialReturn * 1000).toLocaleString()}</span>
                 </div>
             </div>
         </div>
@@ -134,5 +130,5 @@ function loadPreviousResultsWithLinks() {
 // Update the auto-load function to also load results
 document.addEventListener('DOMContentLoaded', function() {
     loadWeeklyPicks();
-    loadPreviousResultsWithLinks(); // CHANGED to use clickable version
+    loadPreviousResultsWithLinks();
 });
