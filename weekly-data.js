@@ -5,70 +5,58 @@ const weeklyPicks = {
     weekTitle: "October 17-19, 2025",
     
     accumulator: {
-        totalOdds: 2.02,
+        totalOdds: 2.04,
         recommendedStake: 10000,
         matches: [
             {
-                homeTeam: "Nottingham",
-                awayTeam: "Chelsea", 
-                betSelection: "Draw/away",
-                odds: 1.28
+                homeTeam: "M'gladbach",
+                awayTeam: "Bayern", 
+                betSelection: "away",
+                odds: 1.24
             },
             {
-                homeTeam: "Fulham",
-                awayTeam: "Arsenal",
-                betSelection: "Away over 0.5",
-                odds: 1.16
+                homeTeam: "Al-hasm",
+                awayTeam: "Al-nassr",
+                betSelection: "Away",
+                odds: 1.20
             },
             {
-                homeTeam: "Getafe", 
-                awayTeam: "Madrid",
-                betSelection: "Away over 0.5",
-                odds: 1.13
+                homeTeam: "Brest", 
+                awayTeam: "PSG",
+                betSelection: "Away over 1.5",
+                odds: 1.37
             },
-            {
-                homeTeam: "PSG",
-                awayTeam: "Strasbourg",
-                betSelection: "Home under 4.5", 
-                odds: 1.09
-            },
-            {
-                homeTeam: "Man City",
-                awayTeam: "Everton",
-                betSelection: "Home over 0.5",
-                odds: 1.10
-            }
             // Add or remove matches as needed
         ]
     }
 };
 
-// Historical Proof Archive
 const bettingArchive = [
-    // PAST WEEKS GO HERE
+    // ADD THIS NEW ENTRY AT THE TOP
     {
-        week: "October 10-12, 2025",
-        date: "2025-10-10",
+        week: "October 17-19, 2025",
+        date: "2025-10-17",
         accumulators: [
             {
                 name: "Weekly Accumulator",
                 result: "W",
                 matches: [
-                    { game: "Man City vs Chelsea", bet: "Home Win", odds: 1.80, actualResult: "W" },
-                    { game: "Arsenal vs Tottenham", bet: "Over 2.5 Goals", odds: 1.90, actualResult: "W" },
-                    { game: "Liverpool vs Brighton", bet: "BTTS: Yes", odds: 1.60, actualResult: "L" }
+                    { game: "Nottingham Forest 0-3 Chelsea", bet: "Draw/away", odds: 1.28, actualResult: "W" },
+                    { game: "Fulham 0-1 Arsenal", bet: "Away over 0.5", odds: 1.16, actualResult: "W" },
+                    { game: "Getafe 0-1 Madrid", bet: "Away over 0.5", odds: 1.13, actualResult: "W" },
+                    { game: "PSG 3-3 Strasbourg", bet: "Home under 4.5", odds: 1.09, actualResult: "W" },
+                    { game: "Man City 2-0 Everton", bet: "Home over 0.5", odds: 1.10, actualResult: "W" }
                 ]
             }
         ]
-    }
-    // Add new weeks here as you complete them
-];
+    },
+    // KEEP your existing entries below
 
 // Simple results tracker
 const previousResults = {
     October2025: [
-        { week: "Oct 10-12", result: "W" },
-        { week: "Oct 3-5", result: "W" },
-        { week: "Sep 26-28", result: "L" }
+        { week: "Oct 17-19", result: "W" },
+    
     ]
 };
+
