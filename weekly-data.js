@@ -2,7 +2,7 @@
 // Just change the match details below - nothing else!
 
 const weeklyPicks = {
-    weekTitle: "October 17-19, 2025",
+    weekTitle: "October 24-26, 2025", // CHANGE TO THIS WEEK
     
     accumulator: {
         totalOdds: 2.04,
@@ -49,14 +49,13 @@ const bettingArchive = [
                 ]
             }
         ]
-    },
-    // KEEP your existing entries below
+    }
+    // Add more past weeks here if needed
+];
 
 // Simple results tracker
 const previousResults = {
     October2025: [
-        { week: "Oct 17-19", result: "W" },
-    
+        { week: "Oct 17-19", result: "W" }
     ]
 };
-
